@@ -1,0 +1,107 @@
+/* Write CSS code here */
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Edu SA Hand', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, cursive;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 35px 0px 35px;
+    min-height: 100vh;
+    background: linear-gradient(to left top, rgb(164, 134, 143), rgb(122, 186, 163));
+}
+.wrapper{
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+}
+.wrapper i{
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px black;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    line-height: 50px;
+    transition: transform 0.1s linear;
+}
+#left{
+    left: -22px;
+}
+#right{
+    right: -22px;
+}
+.carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 50px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.card, .img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    scroll-snap-align: start;
+    height: 400px;
+    list-style: none;
+    background-color: antiquewhite;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: black;
+}
+img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid grey;
+    background-color: white;
+}
+h2{
+    font-weight: 500;
+    font-size: 27px;
+    margin: 30px 0px 5px 0px;
+}
+span{
+    color: rgb(44, 36, 36);
+    font-size: 15px;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
